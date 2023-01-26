@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 
 import Fb.com.baseclass.Baseclass;
 import Fb.com.locators.Adactin_locator;
+import Fb.com.locators.Bookpage;
 import Fb.com.locators.Fk_locators;
 import Fb.com.locators.Locators;
+import Fb.com.locators.Loginpage;
+import Fb.com.locators.Searchpage;
+import Fb.com.locators.Selecthotelpage;
 
 public class Pageobjectmanager extends Baseclass {
 	// public static WebDriver driver;
@@ -40,4 +44,42 @@ public class Pageobjectmanager extends Baseclass {
 		}
 		return Adactin_locator;
 	}
+
+	private Loginpage login;
+	private Searchpage search;
+	private Selecthotelpage selecthotel;
+	private Bookpage book;
+
+	public Loginpage getLogin() {
+		if (login == null) {
+			login = new Loginpage(driver);
+
+		}
+		return login;
+	}
+
+	public Searchpage getSearch() {
+		if (search == null) {
+			search = new Searchpage(driver);
+
+		}
+		return search;
+	}
+
+	public Selecthotelpage getSelecthotel() {
+		if (selecthotel == null) {
+			selecthotel = new Selecthotelpage(driver);
+
+		}
+		return selecthotel;
+	}
+
+	public Bookpage getBook() {
+		if (book == null) {
+			book = new Bookpage(driver);
+
+		}
+		return book;
+	}
+
 }
